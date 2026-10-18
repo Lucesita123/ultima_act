@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://mwwkp47bx5jv"]
+
+[ext_resource type="Script" uid="uid://cyka5s68ld8ic" path="res://scripts/mobile_controls.gd" id="1_k8ypl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_base"]
+bg_color = Color(0.12, 0.14, 0.24, 0.45)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.84, 0.95, 0.7)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knob"]
+bg_color = Color(0.85, 0.88, 0.98, 0.85)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3, 0.33, 0.5, 0.9)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_attack"]
+bg_color = Color(0.75, 0.15, 0.15, 0.6)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.8, 0.8, 0.8)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_interact"]
+bg_color = Color(0.15, 0.45, 0.75, 0.6)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.9, 1, 0.8)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_attack"]
+radius = 45.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 35.0
+
+[node name="MobileControls" type="CanvasLayer" unique_id=142295059]
+layer = 2
+script = ExtResource("1_k8ypl")
+
+[node name="Controls" type="Control" parent="." unique_id=706353636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="JoystickBase" type="Panel" parent="Controls" unique_id=1273065507]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -40.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_base")
+
+[node name="JoystickKnob" type="Panel" parent="Controls/JoystickBase" unique_id=799306664]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_knob")
+
+[node name="AttackButton" type="TouchScreenButton" parent="Controls" unique_id=1383869961]
+position = Vector2(1052, 538)
+shape = SubResource("CircleShape2D_attack")
+action = "player_attack"
+
+[node name="Background" type="Panel" parent="Controls/AttackButton" unique_id=1158720643]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_attack")
+
+[node name="Label" type="Label" parent="Controls/AttackButton/Background" unique_id=410985327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.1, 0.05, 0.05, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "ATACAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractButton" type="TouchScreenButton" parent="Controls" unique_id=896433475]
+position = Vector2(942, 578)
+shape = SubResource("CircleShape2D_interact")
+action = "interact"
+
+[node name="Background" type="Panel" parent="Controls/InteractButton" unique_id=1764093318]
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_interact")
+
+[node name="Label" type="Label" parent="Controls/InteractButton/Background" unique_id=1902485671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.05, 0.05, 0.1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14
+text = "HABLAR"
+horizontal_alignment = 1
+vertical_alignment = 1
