@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://nyglr73qiwne"]
+
+[ext_resource type="Script" uid="uid://blkdulvyphhr2" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://bc7n0dlwxuo7l" path="res://scenes/save_slots.tscn" id="2_myx47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aq51"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.09019608, 0.1254902, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uahpa"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kukqi"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4r4p"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=544714541]
+process_mode = 3
+script = ExtResource("1_n87rw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=806029280]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=1844230458]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausePanel" type="PanelContainer" parent="Background/CenterContainer" unique_id=208800559]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5aq51")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer/PausePanel" unique_id=871709625]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="Background/CenterContainer/PausePanel/VBoxContainer" unique_id=1650239618]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "JUEGO EN PAUSA"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Background/CenterContainer/PausePanel/VBoxContainer" unique_id=1287291101]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_uahpa")
+text = "CONTINUAR"
+
+[node name="SaveButton" type="Button" parent="Background/CenterContainer/PausePanel/VBoxContainer" unique_id=1833701717]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_kukqi")
+text = "GUARDAR PARTIDA"
+
+[node name="LoadButton" type="Button" parent="Background/CenterContainer/PausePanel/VBoxContainer" unique_id=737847818]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_5d2l8")
+text = "CARGAR PARTIDA"
+
+[node name="RestartButton" type="Button" parent="Background/CenterContainer/PausePanel/VBoxContainer" unique_id=999565789]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l7mv")
+text = "REINICIAR NIVEL"
+
+[node name="ExitButton" type="Button" parent="Background/CenterContainer/PausePanel/VBoxContainer" unique_id=2064296682]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+text = "SALIR DEL JUEGO"
+
+[node name="SaveSlots" parent="." unique_id=2046099463 instance=ExtResource("2_myx47")]
+visible = false

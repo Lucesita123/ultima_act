@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://mwwkp47bx5jv"]
+
+[ext_resource type="Script" uid="uid://cyka5s68ld8ic" path="res://scripts/mobile_controls.gd" id="1_k8ypl"]
+
+[node name="MobileControls" type="CanvasLayer" unique_id=142295059]
+script = ExtResource("1_k8ypl")
+
+[node name="Controls" type="Control" parent="." unique_id=706353636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="JoystickBase" type="Control" parent="Controls" unique_id=1273065507]
+layout_mode = 1
+anchor_left = 0.82800007
+anchor_top = 0.69000006
+anchor_right = 0.82800007
+anchor_bottom = 0.69000006
+offset_left = 0.1439209
+offset_top = -0.120025635
+offset_right = 160.14392
+offset_bottom = 159.87997
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JoystickKnob" type="Control" parent="Controls/JoystickBase" unique_id=799306664]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AttackButton" type="TouchScreenButton" parent="Controls" unique_id=1383869961]
+
+[node name="InteractButton" type="TouchScreenButton" parent="Controls" unique_id=896433475]

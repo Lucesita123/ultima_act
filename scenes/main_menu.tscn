@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://efwasdsoil6r"]
+
+[ext_resource type="Script" uid="uid://dfg4d7gudufot" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://mhue3viywloy" path="res://assets/ui/Panorama fantástica bajo la luna.png" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://bc7n0dlwxuo7l" path="res://scenes/save_slots.tscn" id="3_wu84c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aq51"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.09019608, 0.1254902, 0.2, 0.6117647)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iupvx"]
+bg_color = Color(0.09019608, 0.1254902, 0.2, 0.6117647)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82bq7"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5grr"]
+bg_color = Color(0.09019608, 0.1254902, 0.2, 0.6117647)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7ith"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk8pc"]
+bg_color = Color(0.09019608, 0.1254902, 0.2, 0.6117647)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n408c"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MainMenu" type="Control" unique_id=1280819473]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1398733165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_l6cm7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1129848259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1512626794]
+custom_minimum_size = Vector2(440, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5aq51")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=192440606]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1362100604]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 24
+text = "GUARDIANES DEL CRISTAL"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=194375834]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "UNA AVENTURA TE ESPERA"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=485479018]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_iupvx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_82bq7")
+text = "NUEVA PARTIDA"
+
+[node name="LoadGameButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1755970584]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e5grr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h7ith")
+text = "CARGAR PARTIDA"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=301545861]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vk8pc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n408c")
+text = "SALIR"
+
+[node name="SaveSlots" parent="." unique_id=2046099463 instance=ExtResource("3_wu84c")]
+layout_mode = 1

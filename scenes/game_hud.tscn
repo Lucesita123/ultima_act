@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://fx5xbqglbdjm"]
+
+[ext_resource type="Script" uid="uid://cjloubc5mxxfu" path="res://scripts/game_hud.gd" id="1_jna2d"]
+
+[node name="GameHUD" type="CanvasLayer" unique_id=565920768]
+script = ExtResource("1_jna2d")
+
+[node name="HUDContainer" type="Control" parent="." unique_id=1548223171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthPanel" type="PanelContainer" parent="HUDContainer" unique_id=613050239]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86
+anchor_right = 0.86
+offset_left = 0.27996826
+offset_right = 107.27997
+offset_bottom = 54.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDContainer/HealthPanel" unique_id=1804505720]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="HUDContainer/HealthPanel/VBoxContainer" unique_id=2099747916]
+layout_mode = 2
+text = "VIDA: 100/100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="HUDContainer/HealthPanel/VBoxContainer" unique_id=1651016263]
+layout_mode = 2
+value = 100.0
+
+[node name="CrystalsPanel" type="PanelContainer" parent="HUDContainer" unique_id=2141054094]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036000002
+anchor_right = 0.036000002
+offset_left = -0.47200394
+offset_top = 1.0
+offset_right = 124.528
+offset_bottom = 54.0
+
+[node name="CrystalLabel" type="Label" parent="HUDContainer/CrystalsPanel" unique_id=633748987]
+layout_mode = 2
+text = "CRISTALES: 0/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestPanel" type="PanelContainer" parent="HUDContainer" unique_id=487448332]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22200002
+anchor_right = 0.22200002
+offset_left = 0.25598145
+offset_right = 638.256
+offset_bottom = 60.0
+
+[node name="QuestLabel" type="Label" parent="HUDContainer/QuestPanel" unique_id=1368643307]
+layout_mode = 2
+text = "Mision: Hablar con Han Solo"
+horizontal_alignment = 1
+vertical_alignment = 1
