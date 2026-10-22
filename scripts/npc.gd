@@ -18,7 +18,9 @@ func _process(delta: float) -> void:
 
 func interact() -> void:
 	var dialogue_ui = get_tree().current_scene.get_node("DialogueUI")
+	# Si el diálogo ya está abierto, el botón de interacción lo avanza.
 	if dialogue_ui.is_open:
+		dialogue_ui.next_dialogue()
 		return
 	
 	match QuestManager.quest_state:
